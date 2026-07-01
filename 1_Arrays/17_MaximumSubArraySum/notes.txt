@@ -1,0 +1,32 @@
+Algorithm: Kadane's Algorithm
+
+When to use:
+    -> Maximum sum contigous subarray
+
+Core idea:
+    If current running sum becomes negative, discard it because it can only hurt future sums.
+
+Variables:
+    currentSum
+    maxSum
+
+    if also want subarray:
+    tempStart
+    start
+    end
+
+Rules:
+    currentSum += arr[i]
+
+    if currentSum > maxSum
+        update maxSum
+        start = tempStart
+        end = i
+
+    if currentSum < 0
+        currentSum = 0
+        tempStart = i + 1
+
+Complexity:
+    Time: O(n)
+    Space: O(1)

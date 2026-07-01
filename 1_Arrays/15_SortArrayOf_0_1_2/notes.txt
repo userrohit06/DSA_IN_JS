@@ -1,0 +1,35 @@
+Algorithm: Dutch National Flag Algorithm
+
+When to use it:
+-> Array contains exactly 3 distinct values.
+-> Commonly 0, 1 and 2.
+-> Need sorting in one traversal.
+-> Space must be O(1).
+
+Pointers:
+-> low: beginning of its 1s region
+-> mid: current inspector
+-> high: end of unknown region
+
+Invariant:
+0 ... low - 1       -> all 0's
+low ... mid - 1     -> all 1's
+mid ... high        -> unknown
+high + 1 ... n - 1  -> all 2's
+
+Rules:
+
+1. if arr[mid] === 0 (reason: 0 belongs to the left side)
+    swap(low, mid)
+    low++
+    mid++
+
+2. arr[mid] === 1 (reason: 1 is already in its correct region)
+    mid++
+
+3. arr[mid] === 2 (reason: the element coming from the right side has not been inspected yet)
+    swap(mid, high)
+    high--
+
+Time Complexity: O(length of array)
+Space Complexity: O(1)

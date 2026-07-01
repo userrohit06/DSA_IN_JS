@@ -1,0 +1,50 @@
+Algorithm: Boyer-Moore Voting Algorithm
+
+When to use it:
+-> find and element occuring more than n/2 times.
+-> want O(n) time O(1) space complexity.
+-> there may or may not be majority element.
+
+Core idea:
+
+The majority element appears more than all other elements combined.
+So if we repeatedly cancel one occurance of the element with one occurance of a different element, the majority element will still survive.
+
+Variables:
+    candidate: possible majority element
+    count: vote balance
+
+Rules:
+    1. Rule 1:
+        if count === 0
+            then choose the current element as candidate
+            candidate = currentElement
+            count = 1
+
+    2. Rule 2:
+        if currentElement === candidate
+            count++ (reason: candidate gained one more vote)
+
+    3. Rule 3:
+        if currentElement !== candidate
+            count-- (reason: one vote for candidate and one vote against candidate cancel each other)
+
+Verification Step:
+    After the first pass, candidate is only a possible majority element. It is not guaranteed. So run another loop. Count the frequency of candidate.
+
+    if
+        frequency(candidate) > n/2
+        return candidate
+    else
+        return -1
+
+Complexity:
+    Time: O(n) + O(n)
+        = O(2n)
+        = O(n)
+
+    Space: O(1)
+
+Important Observation:
+    The variable "count" does not store frequency. It stores:
+        (number of votes for candidate) - (number of votes against candidate)
