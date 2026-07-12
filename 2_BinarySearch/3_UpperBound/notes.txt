@@ -1,0 +1,1 @@
+The Upper Bound is the smallest index such that: arr[index] > x

@@ -1,0 +1,1 @@
+The lower bound of x is the smallest index such that: arr[index] >= target at the first index where arr[index] is found
