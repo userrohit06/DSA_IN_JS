@@ -8,8 +8,10 @@ function firstNonRepeatingChar(str = "") {
     freqMap.set(ch, (freqMap.get(ch) || 0) + 1);
   }
 
-  for (let [key, value] of freqMap) {
-    if (value === 1) return key;
+  for (let ch of str) {
+    if (freqMap.get(ch) === 1) {
+      return ch;
+    }
   }
 
   return "";
