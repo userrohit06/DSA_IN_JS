@@ -1,0 +1,23 @@
+Hare And Tortoise / Floyd Cycle Detection Algorithm:
+
+Idea:
+
+Instead of traversing the linked list twice:
+
+-> Use two pointers
+-> Both start from head
+
+Movement
+In every iteration:
+
+-> Slow moves 1 node
+-> Fast moves 2 nodes
+
+Algorithm:
+
+while(fast !== null && fast.next !== null){
+    slow = slow.next
+    fast = fast.next.next
+}
+
+return slow
