@@ -17,7 +17,7 @@ function diameter(node) {
     return 1 + Math.max(leftHeight, rightHeight);
   }
 
-  getHeight(root);
+  getHeight(node);
 
   return maxDiameter;
 }
