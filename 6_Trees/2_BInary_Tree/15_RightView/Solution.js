@@ -1,9 +1,10 @@
-function leftView(root) {
-  if (root === null) return null;
+function rightView(root) {
+  if (root === null) return [];
 
-  const queue = [root];
-  const result = [];
+  let queue = [root];
   let front = 0;
+
+  let result = [];
 
   while (front < queue.length) {
     const levelSize = queue.length - front;
@@ -11,7 +12,7 @@ function leftView(root) {
     for (let i = 0; i < levelSize; i++) {
       const node = queue[front++];
 
-      if (i === 0) result.push(node.value);
+      if (i === levelSize - 1) result.push(node.value);
 
       if (node.left !== null) queue.push(node.left);
       if (node.right !== null) queue.push(node.right);
